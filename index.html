@@ -9,6 +9,7 @@
 
     <script type="module" defer src="/assets/js/strawberry_count.js"></script>
     <script defer src="/assets/js/toggleVisible.js"></script>
+    <script defer src="/assets/js/d-adBlockCheck.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,11 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="warning" style="display: none;">
+        <p>Попался! У тебя стоит блокировщик, это понятно. Но как ты теперь маме расскажешь про этот сайт, если кнопки нет?</p>
+        <p>Я расскажу, но <span class="a" id="close-button">хочу убрать этот баннер</span></p>
+    </div>
+    
     <div class="mediaContainer">
         <video class="test" autoplay loop muted>
             <source src="content/meme.mov" type="video/mp4">
@@ -26,11 +32,11 @@
 
         <a id="result" class="large hide">Готово<span class="imageWrapText">
             <img src="content/emoji.jpg" >
-        </span></a>
-        <p>это была <span id="clickCount">0</span> клубничка</p>
+            </span></a>
+            <p>это была <span id="clickCount">0</span> клубничка</p>
 
         <a class="telegram" href="https://t.me/share/url?url=https://jamsucks.ru&text=Мама, смотри что я нашёл на просторах интернета">Рассказать маме</a>
-
+        
         <a href="https://jamsucks.t.me" title="Катя самая лучшая"> Это я в телеге</a>
     </div>
 </body>

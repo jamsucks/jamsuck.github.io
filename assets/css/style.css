@@ -1,3 +1,12 @@
+
+
+@font-face {
+    font-family: Spectral Web;
+    font-weight: 400;
+    src: url(../../assets/fonts/Spectral-Regular-Web.woff2) format("woff2");
+}
+
+
 :root {
     --textColorRGB: 40, 40, 40;
     --textColor: rgb(40, 40, 40);
@@ -6,6 +15,7 @@
     --keyColorRGB: 226, 0, 22;
     --hoverColor: rgb(180, 5, 37);
     --telegramRGB: 26, 165, 221;
+    --warningRGB: 244, 241, 234;
 
     --link-decoration: underline solid rgba(var(--keyColorRGB), .4) .01em;
 }
@@ -17,10 +27,11 @@
 
 
 body {
-    font: 16px/1.2 "Spectral", cursive;
+    font: 16px/1.2 "Spectral Web", sans-serif;
+    background-color: var(--backgroundColor);
 }
 
-a {
+a, .a {
     color: rgb(var(--keyColorRGB));
     text-decoration: var(--link-decoration);
     text-underline-offset: .2em;
@@ -30,7 +41,7 @@ a {
     position: relative;
 }
 
-a:hover {
+a:hover, .a:hover {
     color: var(--hoverColor);
     text-decoration-color: currentColor;
     transition: color .0s ease;
@@ -104,4 +115,19 @@ video:hover {
 
 .hide {
     display: none;
+}
+
+.smallCaps {
+    font-variant: small-caps;
+}
+
+.warning {
+    display: flex;
+    flex-flow: column;
+    gap: .5em;
+    background-color: rgb(244, 241, 234);
+    color: rgb(var(--textColorRGB), 80%);
+    /* border-bottom: .01em solid rgb(var(--textColorRGB), 12%) ; */
+    font-size: 1.1em;
+    padding: .3em 1em .7em .3em;
 }
