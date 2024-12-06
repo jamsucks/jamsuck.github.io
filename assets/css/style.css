@@ -1,10 +1,8 @@
-
-
 @font-face {
     font-family: Spectral Web;
-    font-weight: 400;
-    src: url(../../assets/fonts/Spectral-Regular-Web.woff2) format("woff2");
-}
+      font-weight: 400;
+      src: url(../../assets/fonts/Spectral-Regular-Web.woff2) format("woff2");
+  }
 
 
 :root {
@@ -28,7 +26,6 @@
 
 body {
     font: 16px/1.2 "Spectral Web", sans-serif;
-    background-color: var(--backgroundColor);
 }
 
 a, .a {
