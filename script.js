@@ -1,4 +1,4 @@
-const token = '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'; // Замените на ваш токен
+const token = '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'; // Замените на ваш токен
         const owner = 'jamsucks'; // Замените на имя владельца репозитория
         const repo = 'jamsuck.github.io'; // Замените на имя репозитория
         const path = 'counter.json'; // Путь к файлу
