@@ -1,25 +1,28 @@
 function checkAdBlocker() {
     const adBlockTest = document.createElement('div');
-    adBlockTest.innerHTML = '<a class="telegram" href="https://t.me/share/url?url=https://duck.ai&text=">Рассказать</a>';
+    adBlockTest.innerHTML = '<a class="telegram" href="https://t.me/share/url?url=https://t.me&text=telegram">Рассказать</a>';
     adBlockTest.style.position = 'absolute';
     adBlockTest.style.visibility = 'hidden';
     document.body.appendChild(adBlockTest);
     
-    if (!adBlockTest.offsetHeight && !localStorage.getItem('adBlockerShown')) {
-        document.querySelector('.warning').style.display = 'block';
-        localStorage.setItem('adBlockerShown', 'true');
+    if (!adBlockTest.offsetHeight) {
+        const warningBlock = document.querySelector('.warning');
+        if (warningBlock) warningBlock.style.display = 'block';
     }
     
     document.body.removeChild(adBlockTest);
 }
 
 function hideWarning() {
-    document.querySelector('.warning').style.display = 'none';
+    const warningBlock = document.querySelector('.warning');
+    if (warningBlock) warningBlock.style.display = 'none';
 }
 
 window.onload = checkAdBlocker;
 
 document.addEventListener('DOMContentLoaded', () => {
-    const closeButton = document.querySelector('.warning .close-button');
-    if (closeButton) closeButton.addEventListener('click', hideWarning);
+    const warningBlock = document.querySelector('.warning');
+    if (warningBlock) {
+        warningBlock.addEventListener('click', hideWarning);
+    }
 });
