@@ -1,7 +1,15 @@
 @font-face {
     font-family: Spectral Web;
       font-weight: 400;
+      font-style: normal;
       src: url(../../assets/fonts/Spectral-Regular-Web.woff2) format("woff2");
+  }
+
+@font-face {
+    font-family: Spectral Web;
+      font-weight: 400;
+      font-style: italic;
+      src: url(../../assets/fonts/Spectral-Regular-Italic-Web.woff2) format("woff2");
   }
 
 
