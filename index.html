@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script type="module" defer src="/assets/js/strawberry_count"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
     
     <title>Document</title>
 </head>
 <body>
     <div class="mediaContainer">
         <video class="test" autoplay loop muted>
-            <source src="meme.mov" type="video/mp4">
+            <source src="content/meme.mov" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
         <a id="clickButton" class="large">Поставить </a>
 
         <a class="large">Готово<span class="imageWrapText">
-            <img src="emoji.jpg" >
+            <img src="content/emoji.jpg" >
         </span></a>
         <p>это была <span id="clickCount">0</span> клубничка</p>
 
