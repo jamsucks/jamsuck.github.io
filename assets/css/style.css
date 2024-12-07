@@ -35,13 +35,9 @@
 
 body {
     font: 16px/1.2 "Spectral Web", sans-serif;
-    width: 50%;
-    margin: 0 auto;
 
     @media screen and (max-width: 768px) {
         font-size: 15px;
-        width: 100%;
-        padding: 0 1em;
     }
 }
 
@@ -90,6 +86,16 @@ button {
     border-radius: .2em;
     margin-bottom: 1em;
     font-size: 2em;
+}
+
+.layoutCountainer {
+    width: 50%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 0 1em;
+    }
 }
 
 .mediaContainer {
@@ -151,13 +157,21 @@ video:hover {
 }
 
 .warning {
-    display: flex;
-    flex-flow: column;
-    gap: .5em;
     background-color: rgb(var(--warningRGB));
     color: rgb(var(--textColorRGB), 80%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.warningItem {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .5em;
     font-size: 1.1em;
-    padding: .3em 1em .5em .3em;
+    padding-bottom: .5em;
 }
 
 .resultContainer {
@@ -210,4 +224,8 @@ footer {
 .linkItem {
     width: 10em;
     padding-right: .5em;
+}
+
+.topSpace {
+    height: 6em;
 }
