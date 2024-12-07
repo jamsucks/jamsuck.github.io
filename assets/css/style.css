@@ -208,7 +208,6 @@ video:hover {
 
 footer {
     font-size: .9em;
-    margin-top: 2em;
     padding: .3em 0;
     display: flex;
     border-top: .01em solid rgb(var(--textColorRGB), 20%);
@@ -228,5 +227,9 @@ footer {
 }
 
 .topSpace {
-    height: 6em;
+    height: 2em;
+}
+
+.marginBottom {
+    margin-bottom: 1.5em;
 }
