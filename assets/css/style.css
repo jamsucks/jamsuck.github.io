@@ -180,7 +180,6 @@ video:hover {
     align-items: center;
     padding: 1em 1em 1.5em;
     background-color: rgb(var(--surfaceRGB), 70%);
-    margin-bottom: 3em;
     color: var(--keyColor);
     border-radius: .4em;
     gap: 1em;
