@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+import { getFirestore, doc, runTransaction, getDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyD-GR3LpUVibWcu4BeHwyMnunnaBucF44A",
@@ -13,32 +13,39 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-let count = 0;
+const counterDocRef = doc(db, "clicks", "counter");
+let displayedCount = 0;
 
-const updateCount = async () => {
+const updateDisplayedCount = (count) => {
+    displayedCount = count;
+    document.getElementById("clickCount").textContent = displayedCount;
+};
+
+const refreshCount = async () => {
     try {
-        await setDoc(doc(db, "clicks", "counter"), { count });
-        console.log("Счетчик обновлен в Firestore");
+        const docSnap = await getDoc(counterDocRef);
+        const currentCount = docSnap.exists() ? docSnap.data().count || 0 : 0;
+        updateDisplayedCount(currentCount);
     } catch (error) {
-        console.error("Ошибка обновления счетчика: ", error);
+        console.error(error);
     }
 };
 
-const getCount = async () => {
-    const docSnap = await getDoc(doc(db, "clicks", "counter"));
-    
-    if (docSnap.exists()) {
-        count = docSnap.data().count;
-        document.getElementById("clickCount").textContent = count;
-    } else {
-        console.log("Документ не найден, создаем новый");
-        updateCount();
+const registerClick = async () => {
+    try {
+        await runTransaction(db, async (transaction) => {
+            const docSnap = await transaction.get(counterDocRef);
+            const currentCount = docSnap.exists() ? docSnap.data().count || 0 : 0;
+            transaction.update(counterDocRef, { count: currentCount + 1 });
+        });
+    } catch (error) {
+        console.error(error);
     }
 };
-
-getCount();
 
 document.getElementById("clickButton").addEventListener("click", () => {
-    document.getElementById("clickCount").textContent = ++count;
-    updateCount();
+    updateDisplayedCount(displayedCount + 1);
+    registerClick();
 });
+
+refreshCount();
