@@ -22,6 +22,7 @@
     --hoverColor: rgb(180, 5, 37);
     --telegramRGB: 26, 165, 221;
     --warningRGB: 244, 241, 234;
+    --surfaceRGB: 244, 241, 234;
 
     --link-decoration: underline solid rgba(var(--keyColorRGB), .4) .01em;
 }
@@ -34,6 +35,10 @@
 
 body {
     font: 16px/1.2 "Spectral Web", sans-serif;
+}
+
+h1 {
+    font-size: 4em;
 }
 
 a, .a {
@@ -94,17 +99,18 @@ video {
     clip-path: inset(.2em round .3em);
 }
 
-.imageWrapText {
+.emoji{
     display: inline-block;
     position: relative;
-    vertical-align: middle;
-    width: 1.5em;
-    border-radius: calc(.3em / 3);
+    vertical-align: -.18em;
+    width: 1.1em;
     overflow: hidden;
+    margin-left: .1em;
 }
 
-a.large {
+.large {
     font-size: 2em;
+    text-align: center;
 }
 
 
@@ -135,4 +141,35 @@ video:hover {
     /* border-bottom: .01em solid rgb(var(--textColorRGB), 12%) ; */
     font-size: 1.1em;
     padding: .3em 1em .7em .3em;
+}
+
+.resultContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 1em 1em 2.3em;
+    background-color: rgb(var(--surfaceRGB), 70%);
+    margin-bottom: 3em;
+    color: var(--keyColor);
+    border-radius: .4em;
+}
+
+.messageCount p {
+    font-size: 1.5em;
+    color: rgb(var(--textColorRGB), 60%);
+    font-style: italic;
+    margin: 0;
+}
+
+.messageCount {
+    text-align: center;
+    margin-bottom: 1.4em;
+    padding: 0 2em;
+    line-height: 1.1;
+}
+
+.icon {
+    vertical-align: -.3em;
+    width: 1.3em;
+    margin-right: .3em;
 }
