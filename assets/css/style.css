@@ -40,7 +40,8 @@ body {
 
     @media screen and (max-width: 768px) {
         font-size: 15px;
-        width: 95%;
+        width: 100%;
+        padding: 0 1em;
     }
 }
 
