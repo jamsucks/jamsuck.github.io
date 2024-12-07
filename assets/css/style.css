@@ -21,7 +21,7 @@
     --keyColorRGB: 226, 0, 22;
     --hoverColor: rgb(180, 5, 37);
     --telegramRGB: 26, 165, 221;
-    --warningRGB: 244, 241, 234;
+    --warningRGB: 255, 246, 68;
     --surfaceRGB: 244, 241, 234;
 
     --link-decoration: underline solid rgba(var(--keyColorRGB), .4) .01em;
@@ -136,11 +136,10 @@ video:hover {
     display: flex;
     flex-flow: column;
     gap: .5em;
-    background-color: rgb(244, 241, 234);
+    background-color: rgb(var(--warningRGB));
     color: rgb(var(--textColorRGB), 80%);
-    /* border-bottom: .01em solid rgb(var(--textColorRGB), 12%) ; */
     font-size: 1.1em;
-    padding: .3em 1em .7em .3em;
+    padding: .3em 1em .5em .3em;
 }
 
 .resultContainer {
