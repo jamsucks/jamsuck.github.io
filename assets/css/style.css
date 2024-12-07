@@ -42,7 +42,7 @@ body {
 }
 
 h1 {
-    font-size: 4em;
+    font-size: 3.8em;
 }
 
 a, .a {
@@ -178,11 +178,13 @@ video:hover {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 1em 1em 2.3em;
+    padding: 1em 1em 1.5em;
     background-color: rgb(var(--surfaceRGB), 70%);
     margin-bottom: 3em;
     color: var(--keyColor);
     border-radius: .4em;
+    gap: 1em;
+    font-size: 1.2em;
 }
 
 .messageCount p {
@@ -194,9 +196,9 @@ video:hover {
 
 .messageCount {
     text-align: center;
-    margin-bottom: 1.4em;
     padding: 0 2em;
-    line-height: 1.1;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .icon {
