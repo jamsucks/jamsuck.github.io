@@ -5,24 +5,18 @@ function checkAdBlocker() {
     adBlockTest.style.visibility = 'hidden';
     document.body.appendChild(adBlockTest);
     
-    if (!adBlockTest.offsetHeight) {
         const warningBlock = document.querySelector('.warning');
-        if (warningBlock) warningBlock.style.display = 'block';
+    if (!adBlockTest.offsetHeight && warningBlock) {
+        warningBlock.classList.remove('hide');
     }
     
     document.body.removeChild(adBlockTest);
 }
 
-function hideWarning() {
-    const warningBlock = document.querySelector('.warning');
-    if (warningBlock) warningBlock.style.display = 'none';
-}
-
-window.onload = checkAdBlocker;
-
 document.addEventListener('DOMContentLoaded', () => {
     const warningBlock = document.querySelector('.warning');
     if (warningBlock) {
-        warningBlock.addEventListener('click', hideWarning);
+        window.onload = checkAdBlocker;
+        warningBlock.addEventListener('click', () => warningBlock.classList.add('hide'));
     }
 });
