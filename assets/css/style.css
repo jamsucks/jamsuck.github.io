@@ -120,6 +120,12 @@ video {
     text-align: center;
 }
 
+.clickButton {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+}
+
 
 video {
     transition: filter .5s ease;
