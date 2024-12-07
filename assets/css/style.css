@@ -35,6 +35,13 @@
 
 body {
     font: 16px/1.2 "Spectral Web", sans-serif;
+    width: 50%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 768px) {
+        font-size: 15px;
+        width: 95%;
+    }
 }
 
 h1 {
