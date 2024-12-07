@@ -1,8 +1,7 @@
 function checkAdBlocker() {
     const adBlockTest = document.createElement('div');
     adBlockTest.innerHTML = '<a class="telegram" href="https://t.me/share/url?url=https://t.me&text=telegram">Рассказать</a>';
-    adBlockTest.style.position = 'absolute';
-    adBlockTest.style.visibility = 'hidden';
+    adBlockTest.style.cssText = 'position:absolute;visibility:hidden;';
     document.body.appendChild(adBlockTest);
     
         const warningBlock = document.querySelector('.warning');
