@@ -132,6 +132,10 @@ video:hover {
     font-variant: small-caps;
 }
 
+.lead {
+    font-size: 1.3em;
+}
+
 .warning {
     display: flex;
     flex-flow: column;
