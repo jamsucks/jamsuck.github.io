@@ -56,6 +56,7 @@ a, .a {
     color: rgb(var(--keyColorRGB));
     text-decoration: underline;
     text-decoration-thickness: .01em;
+    text-decoration-color: rgba(var(--keyColorRGB), .4);
     text-underline-offset: .2em;
     text-decoration-skip: none;
     text-decoration-skip-ink: none;
