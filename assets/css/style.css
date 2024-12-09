@@ -23,8 +23,6 @@
     --telegramRGB: 26, 165, 221;
     --warningRGB: 255, 246, 68;
     --surfaceRGB: 244, 241, 234;
-
-    --link-decoration: underline solid rgba(var(--keyColorRGB), .4) .01em;
 }
 
 * {
@@ -47,7 +45,8 @@ h1 {
 
 a, .a {
     color: rgb(var(--keyColorRGB));
-    text-decoration: var(--link-decoration);
+    text-decoration: underline;
+    text-decoration-thickness: .01em;
     text-underline-offset: .2em;
     text-decoration-skip: none;
     text-decoration-skip-ink: none;
